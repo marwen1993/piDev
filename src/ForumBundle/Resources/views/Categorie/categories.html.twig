@@ -1,0 +1,25 @@
+{% extends'@Forum/Default/index.html.twig' %}
+{% block containt %}
+<h1>Liste des catégories </h1>
+
+<html>
+    <fieldset style="width:460px;">
+        {% for rece in C %}
+
+        <br>
+        <br>
+        <table border="0">
+            <fieldset>
+
+            <tr>
+                <td> <a href="{{ path('pi_forum_affiche_recette')}}"> {{ rece.nom }} </a></td>
+            </tr>
+            </fieldset>
+
+        </table>
+
+            {% endfor %}
+
+    </fieldset>
+</html>
+{% endblock %}

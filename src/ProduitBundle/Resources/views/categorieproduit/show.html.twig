@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Categorieproduit</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ categorieProduit.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ categorieProduit.nom }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('categorieproduit_index') }}">list</a>
+        </li>
+
+    </ul>
+{% endblock %}

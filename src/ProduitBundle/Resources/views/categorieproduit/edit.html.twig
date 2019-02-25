@@ -1,0 +1,17 @@
+{% extends 'layoutback.html.twig' %}
+
+{% block body %}
+    <h1>Modifier une categorie de produit</h1>
+
+    {{ form_start(edit_form) }}
+        {{ form_widget(edit_form) }}
+        <input type="submit" value="Valider modification" />
+    {{ form_end(edit_form) }}
+
+    <ul>
+        <li>
+            <a href="{{ path('categorieproduit_index') }}"><input type="submit" value="Annuler" />
+        </li>
+
+    </ul>
+{% endblock %}

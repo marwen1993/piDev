@@ -1,0 +1,43 @@
+{% extends'@Forum/Default/index.html.twig' %}
+{% block containt %}
+<fieldset >
+    <legend>Ajouter une Recette </legend>
+
+    {{ form_start(f) }}
+
+    <div class="form-groupe">
+    {{ form_label(f.nom,'Le nom du recette') }}
+    {{ form_errors(f.nom) }}
+    {{ form_widget(f.nom) }}
+    </div>
+
+    <br>
+
+    <div class="form-groupe">
+    {{ form_label(f.categorie) }}
+    {{ form_errors(f.categorie) }}
+    {{ form_widget(f.categorie) }}
+    </div>
+    <br>
+    <div class="form-groupe">
+    {{ form_label(f.duree) }}
+    {{ form_errors(f.duree) }}
+    {{ form_widget(f.duree) }}
+    </div>
+    <br>
+    <div class="form-groupe">
+    {{ form_label(f.besoin) }}
+    {{ form_errors(f.besoin) }}
+    {{ form_widget(f.besoin) }}
+    </div>
+    <br>
+    <div class="form-groupe">
+    {{ form_label(f.preparation) }}
+    {{ form_errors(f.preparation) }}
+    {{ form_widget(f.preparation) }}
+    </div>
+    {{ form_end(f) }}
+
+</fieldset>
+
+{% endblock %}

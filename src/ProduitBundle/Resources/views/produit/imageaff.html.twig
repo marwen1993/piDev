@@ -1,0 +1,21 @@
+{% extends 'layoutback.html.twig' %}
+
+{% block body %}
+    <h1>les image</h1>
+
+{% for image in image %}
+
+    <td>
+        <img src="{{ asset('bundles/upload/')}}{{ image.chemin }}" width="100" class="img-circle" />
+    </td>
+
+
+
+{% endfor %}
+
+    <ul>
+        <li>
+            <a href="{{ path('produit_index') }}"><input type="submit" value="Retourner vers la liste des produits" />
+        </li>
+    </ul>
+{% endblock %}

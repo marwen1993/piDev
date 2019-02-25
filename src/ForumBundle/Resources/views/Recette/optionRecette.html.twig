@@ -1,0 +1,29 @@
+{% extends'@Forum/Default/index.html.twig' %}
+{% block containt %}
+<fieldset>
+    <legend><h3>Liste des Recettes</h3></legend>
+<br><br>
+    <table border="0">
+        <tr style="color: rgba(41,32,32,0.99)">
+            <th>Nom Recette</th><TH>Préparation</TH><th>Besoin</th>
+            <th>Durée</th><th>Catégorie</th>
+            <th>Supprimer cette Recette</th>
+            <th>Modifier cette Recette</th>
+        </tr>
+        {% for rece in R %}
+            <tr>
+
+                <td><a href="{{ path('pi_forum_affiche_Commantaire',{'id':rece.id}) }}">{{ rece.nom }}</a></td>
+                <td  style="color: rgba(41,32,32,0.99)">{{ rece.preparation }}</td>
+                <td style="color: rgba(41,32,32,0.99)">{{ rece.besoin }}</td>
+                <td style="color: rgba(41,32,32,0.99)">{{ rece.duree }}</td>
+                <td style="color: rgba(41,32,32,0.99)">{{ rece.categorie.nom }}</td>
+                <td><center><a href="{{ path('pi_forum_modif_recette',{'id':rece.id}) }}">Modifier</a></center></td>
+                <td><center><a href="{{ path('pi_forum_supprimv_recette',{'id':rece.id}) }}">Supprimer</a></center></td>
+
+            </tr>
+        {% endfor %}
+    </table>
+</fieldset>
+
+{% endblock %}

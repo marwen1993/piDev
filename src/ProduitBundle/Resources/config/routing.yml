@@ -1,0 +1,114 @@
+produit_homepage:
+    path:     /
+    defaults: { _controller: ProduitBundle:Default:index }
+categorieproduit_index:
+    path:     /categorieindex
+    defaults: { _controller: "ProduitBundle:CategorieProduit:index" }
+
+categorieproduit_show:
+    path:     /show/{nom}
+    defaults: { _controller: "ProduitBundle:CategorieProduit:show" }
+
+categorieproduit_new:
+    path:     /new
+    defaults: { _controller: "ProduitBundle:CategorieProduit:new" }
+
+categorieproduit_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "ProduitBundle:CategorieProduit:edit" }
+
+categorieproduit_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "ProduitBundle:CategorieProduit:delete" }
+produit_index:
+    path:     /produit_index
+    defaults: { _controller: "ProduitBundle:Produit:index" }
+
+
+produit_show:
+    path:     /showproduit/{id}
+    defaults: { _controller: "ProduitBundle:Produit:show" }
+
+
+produit_new:
+    path:     /newproduit
+    defaults: { _controller: "ProduitBundle:Produit:new" }
+
+
+produit_edit:
+    path:     /{id}/editproduit
+    defaults: { _controller: "ProduitBundle:Produit:edit" }
+
+
+produit_delete:
+    path:     /{id}/deleteproduit
+    defaults: { _controller: "ProduitBundle:Produit:delete" }
+
+image_produit:
+    path:     /{id}/addimage
+    defaults: { _controller: "ProduitBundle:Produit:ajout_image" }
+affichage_image:
+    path:     /{id}/affiimage
+    defaults: { _controller: "ProduitBundle:Produit:aff_image" }
+produit_indexfront:
+    path:     /produit_indexfront
+    defaults: { _controller: "ProduitBundle:Produit:indexfront" }
+produit_visib:
+    path:     /{id}/produit_visib
+    defaults: { _controller: "ProduitBundle:Produit:visible" }
+promitionprix_index:
+    path:     /promitionprix_index
+    defaults: { _controller: "ProduitBundle:PromitionPrix:index" }
+
+
+promitionprix_show:
+    path:     /{id}/showpromition
+    defaults: { _controller: "ProduitBundle:PromitionPrix:show" }
+
+
+promitionprix_new:
+    path:     /newpromition
+    defaults: { _controller: "ProduitBundle:PromitionPrix:new" }
+
+
+promitionprix_edit:
+    path:     /editpromition/{promitionPrix}
+    defaults: { _controller: "ProduitBundle:PromitionPrix:edit" }
+
+
+promitionprix_delete:
+    path:     /{id}/deletepromition
+    defaults: { _controller: "ProduitBundle:PromitionPrix:delete" }
+
+
+
+
+
+allp:
+    path:     /promosion/all
+    defaults: { _controller: "ProduitBundle:PromitionPrix:all" }
+
+create_p:
+    path:     /promosion/new
+    defaults: { _controller: "ProduitBundle:PromitionPrix:new1"}
+
+
+all:
+    path:     /categorie/af
+    defaults: { _controller: ProduitBundle:CategorieProduit:all }
+
+create_categorie:
+    path:     /categorie/new
+    defaults: { _controller: ProduitBundle:CategorieProduit:AjouteCategorie}
+
+toutprodui:
+    path:     /produit/all
+    defaults: { _controller: "ProduitBundle:Produit:all" }
+
+create_prod:
+    path:     /produit/newpr/{nom}/{prix}/{visib}/{img}/{id}
+    defaults: { _controller: ProduitBundle:Produit:new1}
+
+showrecherche:
+    path:     /showrecherche1/{id}
+    defaults: { _controller: ProduitBundle:Produit:showrecherche}

@@ -1,0 +1,65 @@
+{% extends 'layoutback.html.twig' %}
+
+{% block body %}
+    <h1>Liste des produits</h1>
+    <table id="dynamic-table" class="table table-striped table-bordered table-hover" style="margin-left: 200px;">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Prix</th>
+                <th>Visib</th>
+                <th>user</th>
+                <th>categorie</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for produitee in produits %}
+            <tr>
+                <td><a href="{{ path('produit_show', { 'id': produitee.id }) }}">{{ produitee.id }}</a></td>
+                <td>{{ produitee.nom }}</td>
+                <td>{{ produitee.prix }}</td>
+                <td>{{ produitee.visib }}</td>
+                <td>{{ produitee.user }}</td>
+                <td>{{ produitee.categorie.nom }}</td>
+                <td>
+                    <ul>
+                        <div class="hidden-sm hidden-xs action-buttons">
+                            <a class="blue" href="{{ path('produit_show', { 'id': produitee.id }) }}">
+                                <i class="ace-icon fa fa-search-plus bigger-130"></i>
+                            </a>
+
+                            <a class="green" href="{{ path('produit_edit', { 'id': produitee.id }) }}">
+                                <i class="ace-icon fa fa-pencil bigger-130"></i>
+                            </a>
+
+                            <a class="red" href="{{ path('produit_delete', { 'id': produitee.id }) }}">
+                                <i class="ace-icon fa fa-trash-o bigger-130"></i>
+                            </a>
+                        </div>
+                        {% if(produitee.visib == 0) %}
+                            <a href="{{ path('produit_visib', { 'id': produitee.id }) }}"/>
+                                <i class="ace-icon fa fa-eye bigger-130"></i>
+                            </a>
+
+{% else %}
+    <a  href="{{ path('produit_visib', { 'id': produitee.id }) }}"/>
+        <i class="ace-icon fa fa-eye-slash bigger-130"></i>
+    </a>
+
+                        {% endif %}
+
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('produit_new') }}"/><input type="submit" class="btn btn-success" value="Ajouter un nouveau produit" style="margin-left: 200px;"/>
+        </li>
+    </ul>
+{% endblock %}

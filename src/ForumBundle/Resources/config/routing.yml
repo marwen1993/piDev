@@ -1,0 +1,57 @@
+forum_homepage:
+    path:     /
+    defaults: { _controller: ForumBundle:Default:index }
+
+
+
+
+
+pi_forum_ajoute_categorie:
+    path:     /ajout_categorie
+    defaults: { _controller: ForumBundle:Categorie:Ajout }
+
+pi_forum_affichage_categorie:
+    path:     /affichage_categorie
+    defaults: { _controller: ForumBundle:Categorie:Affich }
+
+
+
+
+pi_forum_ajout_recette:
+    path:     /ajout_recette
+    defaults: { _controller: ForumBundle:Recette:Ajout }
+
+pi_forum_affiche_recette:
+    path:     /affiche_recette
+    defaults: { _controller: ForumBundle:Recette:Affich }
+
+pi_forum_modif_recette:
+    path:     /modifRecette/{id}
+    defaults: { _controller: ForumBundle:Recette:modif }
+
+pi_forum_supprimv_recette:
+    path:     /supprimRecette/{id}
+    defaults: { _controller: ForumBundle:Recette:delete }
+
+pi_forum_affichesimple_recette:
+    path:     /affiche_simple_recette
+    defaults: { _controller: ForumBundle:Recette:Affichesimple }
+
+
+
+pi_forum_ajout_Commantaire:
+    path:     /ajout_Commantaire
+    defaults: { _controller: ForumBundle:Commentaire:Ajout }
+
+pi_forum_affiche_Commantaire:
+    path:     /affiche_Commantaire
+    defaults: { _controller: ForumBundle:Commentaire:Affich }
+
+pi_forum_modif_Commantaire:
+    path:     /modifCommantaire/{id}
+    defaults: { _controller: ForumBundle:Commentaire:modif }
+
+pi_forum_supprimv_Commantaire:
+    path:     /supprimCommantaire/{id}
+    defaults: { _controller: ForumBundle:Commentaire:delete }
+

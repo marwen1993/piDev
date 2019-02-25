@@ -1,0 +1,16 @@
+{% extends 'layoutback.html.twig' %}
+
+{% block body %}
+    <h1>Ajout d'image pour un produit</h1>
+
+    {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <input type="submit" value="Importer image" />
+    {{ form_end(form) }}
+
+    <ul>
+        <li>
+            <a href="{{ path('produit_index') }}">Liste Precedente</a>
+        </li>
+    </ul>
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends'@Forum/Default/index.html.twig' %}
+{% block containt %}
+<fieldset style="align-content: center ">
+    <legend> Ajouter une Catégorie</legend>
+    {{ form_start(f) }}
+
+    {{ form_label(f.nom) }}
+    {{ form_errors(f.nom) }}
+    {{ form_widget(f.nom) }}
+
+    <br>
+    <br>
+
+    {{ form_label(f.Valider) }}
+    {{ form_widget(f.Valider) }}
+
+</fieldset>
+    {{ form_end(f) }}
+{% endblock %}

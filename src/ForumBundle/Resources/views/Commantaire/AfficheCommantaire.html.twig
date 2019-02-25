@@ -1,0 +1,39 @@
+{% extends'@Forum/Default/index.html.twig' %}
+{% block containt %}
+<html>
+<center>
+<fieldset style="width:460px;">
+    {% for rece in C %}
+
+    <br>
+    <br>
+    <table border="0">
+            <tr>
+                    <fieldset>
+                        <center>
+               {{ rece.contenu }}
+                    </center>
+                    </fieldset>
+                <a href="{{ path('pi_forum_modif_Commantaire',{'id':rece.id}) }}">Modifier Votre Commantaire</a>
+              <center>  <a href="{{ path('pi_forum_supprimv_Commantaire',{'id':rece.id}) }}">Supprimer Votre Commantaire</a></center>
+            </tr>
+        {% endfor %}
+
+        <tr>
+            <td>
+                <fieldset>
+
+                    Insrer Votre Commantaire ici : <input type="text" id="commantaire">
+                </fieldset>
+            </td>
+        </tr>
+    </table>
+    <form>
+        <input type="submit" name="b1" value="Proposer une recette" formaction="{{ path('pi_forum_ajout_recette')}}">
+        <input type="submit" name="b2" value="Demander une Recette :D" formaction="{{ path('pi_forum_ajoute_categorie')}}">
+    </form>
+
+</fieldset>
+</center>
+</html>
+{% endblock %}

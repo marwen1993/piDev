@@ -1,0 +1,38 @@
+{% extends 'layoutback.html.twig' %}
+
+{% block body %}
+    <h1>Produit</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ produit.0.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ produit.0.nom }}</td>
+            </tr>
+            <tr>
+                <th>Prix</th>
+                <td>{{ produit.0.prix }}</td>
+            </tr>
+            <tr>
+                <th>Visib</th>
+                <td>{{ produit.0.visib }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('produit_index') }}">list</a>
+        </li>
+        <li>
+            <a href="{{ path('image_produit', { 'id': produit.0.id }) }}">addimage</a>
+        </li>
+        <li>
+            <a href="{{ path('affichage_image', { 'id': produit.0.id }) }}">les image</a>
+        </li>
+    </ul>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends 'layoutback.html.twig' %}
+
+{% block body %}
+    <h1>Page de creation d'une categorie</h1>
+
+    {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <input type="submit" value="Create" />
+    {{ form_end(form) }}
+
+
+{% endblock %}

@@ -1,0 +1,51 @@
+{% extends 'layoutback.html.twig' %}
+
+{% block body %}
+    <h1>Promitionprixes list</h1>
+
+     <table id="dynamic-table" class="table table-striped table-bordered table-hover"style="margin-left: 200px;" >
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Datedebut</th>
+                <th>Datefin</th>
+                <th>Pourcentage</th>
+                <th>ancient Prix</th>
+                <th>Nouvelle Prix</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for promitionPrix in promitionPrixes %}
+            <tr>
+                <td><a href="{{ path('promitionprix_show', { 'id': promitionPrix.id }) }}">{{ promitionPrix.id }}</a></td>
+                <td>{{ promitionPrix.nom }}</td>
+                <td>{% if promitionPrix.dateDebut %}{{ promitionPrix.dateDebut|date('Y-m-d') }}{% endif %}</td>
+                <td>{% if promitionPrix.dateFin %}{{ promitionPrix.dateFin|date('Y-m-d') }}{% endif %}</td>
+                <td>{{ promitionPrix.pourcentage }} %</td>
+                <td>{{ promitionPrix.produit.prix }}</td>
+                <td>{{promitionPrix.produit.prix - (promitionPrix.produit.prix  * promitionPrix.pourcentage)/100 }}</td>
+                <td>
+                    <ul>
+
+                        <li>
+                            <a href="{{ path('promitionprix_edit', { 'promitionPrix': promitionPrix.id }) }}"><i class="ace-icon fa fa-pencil bigger-130"></i>
+                        </li>
+                        <li>
+                            <a href="{{ path('promitionprix_delete', { 'id': promitionPrix.id }) }}"> <i class="ace-icon fa fa-trash-o bigger-130"></i>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('promitionprix_new') }}"><input type="submit" value="Creer une nouvelle promotion" style="margin-left: 200px;" />
+        </li>
+
+    </ul>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'layoutback.html.twig' %}
+
+{% block body %}
+ <div class="container" style="margin-left: 550px">
+    <h1>Produit creation</h1>
+
+   {{ form_start(form) }}
+
+        {{ form_widget(form) }}
+     <br><br>
+        <input type="submit" value="Valider Creation" class="btn btn-success" />
+    {{ form_end(form) }}
+
+
+     <br>
+     <br>
+     <br>
+            <a class="btn btn-default fa fa-backward" href="{{ path('produit_index') }}">  Retourner vers la liste des produits</a>
+
+ </div>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends'@Forum/Default/index.html.twig' %}
+{% block containt %}
+<fieldset>
+    <legend><h3>Liste des Recettes</h3></legend>
+    <table border="0">
+        {% for rece in R %}
+            {{ rece.categorie.nom }}
+    </br>
+            </br>
+            </br>
+            <tr>
+                <td>{{ rece.nom }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+</fieldset>
+{% endblock %}

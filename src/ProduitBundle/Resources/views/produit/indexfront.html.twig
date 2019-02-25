@@ -1,0 +1,97 @@
+{% extends '::layoutfront.html.twig' %}
+
+{% block prod %}
+    <h1>Produits list</h1>
+    <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active show fade" id="drink">
+            <ul class="list-unstyled">
+                {% for produit in produits %}
+                <li class="menu-box clearfix margin-b-20">
+                    <div class="thumb">
+                        {% for image in images %}
+                        {% if produit == image.produit %}
+                        <img src="{{ asset('bundles/upload/'~ image.chemin ~'')}}" width="70" class="img-fluid" alt="">
+                        {%  endif %}
+                    {% endfor %}</div>
+                    <div class="menu-content">
+                        <h4><a href="#">{{ produit.nom }}</a> <span>{{ produit.prix }}DT</span></h4>
+                        <p>{{ produit.categorie }}</p>
+                    </div>
+                </li><!--end menu box-->
+                {% endfor %}
+                <!--end menu box-->
+            </ul>
+            {{ socialButtons() }}
+            <br>
+            <br>
+        </div>
+        <h1>Promotion</h1>
+        <div role="tabpanel" class="tab-pane active show fade" id="drink">
+            <ul class="list-unstyled">
+                {% for produit in produits %}
+                {% for promo in promos  %}
+                    {% if produit == promo.produit %}
+                    <li class="menu-box clearfix margin-b-20">
+                        <div class="thumb">
+                            {% for image in images %}
+                                {% if produit == image.produit %}
+                                    <img src="{{ asset('bundles/upload/'~ image.chemin ~'')}}" width="70" class="img-fluid" alt="">
+                                {%  endif %}
+                            {% endfor %}</div>
+                        <div class="menu-content">
+                            <h4><a href="#">{{ produit.nom }}</a> <span>{{promo.produit.prix - (promo.produit.prix  * promo.pourcentage)/100 }}DT</span></h4>
+                            <p>{{ produit.categorie }}</p>
+                        </div>
+                    </li><!--end menu box-->
+                {% endif %}
+                {% endfor %}
+                {% endfor %}
+                <!--end menu box-->
+            </ul>
+        </div>
+        <div role="tabpanel" class="tab-pane fade" id="dinner">
+            <ul class="list-unstyled">
+                <li class="menu-box clearfix margin-b-20">
+                    <div class="thumb">
+                        <img src="{{ asset('assetsfront/images/img-9.jpg') }}" width="70" class="img-fluid" alt="">
+                    </div>
+                    <div class="menu-content">
+                        <h4><a href="#">Rice & Flesh</a> <span>$8.79</span></h4>
+                        <p>pellentesque enim. Aliquam tempor</p>
+                    </div>
+                </li><!--end menu box-->
+                <li class="menu-box clearfix margin-b-20">
+                    <div class="thumb">
+                        <img src="assets/images/img-6.jpg" width="70" class="img-fluid" alt="">
+                    </div>
+                    <div class="menu-content">
+                        <h4><a href="#">Seafood</a> <span>$11.79</span></h4>
+                        <p>pellentesque enim. Aliquam tempor</p>
+                    </div>
+                </li><!--end menu box-->
+                <li class="menu-box clearfix margin-b-20">
+                    <div class="thumb">
+                        <img src="assets/images/img-5.jpg" width="70" class="img-fluid" alt="">
+                    </div>
+                    <div class="menu-content">
+                        <h4><a href="#">Chicken</a> <span>$6.79</span></h4>
+                        <p>pellentesque enim. Aliquam tempor</p>
+                    </div>
+                </li><!--end menu box-->
+                <li class="menu-box clearfix margin-b-20">
+                    <div class="thumb">
+                        <img src="assets/images/img-4.jpg" width="70" class="img-fluid" alt="">
+                    </div>
+                    <div class="menu-content">
+                        <h4><a href="#">Veal & Beef</a> <span>$9.79</span></h4>
+                        <p>pellentesque enim. Aliquam tempor</p>
+                    </div>
+                </li><!--end menu box-->
+            </ul>
+        </div>
+
+    </div>
+
+    </div>
+
+{% endblock %}

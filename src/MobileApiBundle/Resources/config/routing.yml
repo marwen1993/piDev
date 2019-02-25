@@ -1,0 +1,16 @@
+mobile_api_homepage:
+    path:     /
+    defaults: { _controller: MobileApiBundle:Default:index }
+
+all:
+    path:     /tasks/all
+    defaults: { _controller:  MobileApiBundle:Task:all }
+
+find_task:
+    path:     /tasks/find/{id}
+    defaults: { _controller:  MobileApiBundle:Task:find}
+
+create_task:
+    path:     /tasks/new
+    defaults: { _controller:  MobileApiBundle:Task:new}
+
